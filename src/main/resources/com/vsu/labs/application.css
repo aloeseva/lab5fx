@@ -49,13 +49,13 @@
 }
 
 .text-area {
-    -fx-control-inner-background:#2c4423;
+    -fx-control-inner-background:#227964;
     -fx-font-family: Consolas;
-    -fx-highlight-text-fill: #2c4423;
-    -fx-text-fill: white;
-    -fx-highlight-fill: #2c4423;
+    -fx-highlight-text-fill: #227964;
+    -fx-text-fill: black;
+    -fx-highlight-fill: #227964;
 }
 
 .text-area:focused {
-    -fx-highlight-fill: #2c4423;
+    -fx-highlight-fill: #227964;
 }
