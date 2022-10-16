@@ -1,47 +1,36 @@
 package com.vsu.labs.lab6;
 
 public class Lab6Service {
-    public static String figure(int s) {
+    public static String result(double x, int n, double e) {
         String str = "";
         StringBuilder strBuilder = new StringBuilder(str);
-        starDraw(s/2, s/2, true, strBuilder);
-        starDraw(s/2, 1, false, strBuilder);
+        double math = Math.sin(x) / x;
+
+        int countE = 0;
+        int countEDivide = 0;
+        double sum = 1;
+        double anTmp = 1;
+        for (int i = 2; i <= n; i++) {
+            anTmp = f(x, anTmp, i);
+            sum += anTmp;
+            if (Math.abs(anTmp) > e) {
+                countE++;
+            }
+
+            if (Math.abs(anTmp) > e/10) {
+                countEDivide++;
+            }
+        }
+
+        strBuilder.append("Сумма n слагаемых = ").append(sum).append("\n");
+        strBuilder.append("Сумма слагаемых, которые по абсолютной величине больше e = ").append(countE).append("\n");
+        strBuilder.append("Сумма слагаемых, которые по абсолютной величине больше e/10 = ").append(countEDivide).append("\n");
+        strBuilder.append("Значение функции с помощью методов Math = ").append(math);
         return strBuilder.toString();
     }
 
-    private static void starDraw(int s, int sIter, boolean inv, StringBuilder str) {
-        if (inv) {
-            str.append(" ".repeat(Math.max(0, s)));
-
-            supplier(s, sIter, str);
-
-            if (sIter != 1) {
-                starDraw(s, sIter-1, true, str);
-            }
-        } else {
-            str.append(" ".repeat(Math.max(0, s - sIter)));
-
-            supplier(s, sIter, str);
-
-            if (sIter < s) {
-                starDraw(s, sIter + 1, false, str);
-            }
-        }
+    private static double f(double x, double anPrev, int n) {
+        double r = anPrev * ((x * x) / ((2*n - 2) * (2*n - 1)));
+        return r * -1;
     }
-
-    private static void supplier(int s, int sIter, StringBuilder str) {
-        if (s == sIter) {
-            str.append("*".repeat(Math.max(0, s)));
-        } else if (sIter > 1) {
-            str.append("*");
-            if (sIter > 2) {
-                str.append("#".repeat(sIter - 2));
-            }
-            str.append("*");
-        } else {
-            str.append("*");
-        }
-        str.append("\n");
-    }
-
 }

@@ -1,6 +1,7 @@
 package com.vsu.labs;
 
 import com.vsu.labs.lab5.Lab5Service;
+import com.vsu.labs.lab6.Lab6Service;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -23,14 +24,11 @@ public class VSULabsController implements Initializable {
     public Menu menuLab6;
     public Pane paneLab6;
     public Label labelTypeLab6;
-    public Button buttonCreate1Lab6;
-    public Button buttonCreate2Lab6;
-    public Button buttonCreate3Lab6;
-    public Button buttonCreate4Lab6;
+    public Button buttonLab6;
     public TextArea textAreaOutputFigureLab6;
-    public TextField textField1Lab6;
-    public TextField textField2Lab6;
-    public TextField textField3Lab6;
+    public TextField textFieldXLab6;
+    public TextField textFieldNLab6;
+    public TextField textFieldELab6;
     public MenuItem menuItemLab5;
     public MenuItem menuItemLab6;
     private Pane selectedPane;
@@ -38,26 +36,36 @@ public class VSULabsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        selectedPane = paneLab5;
+        selectedPane = paneLab6;
         selectedPane.setVisible(true);
-        paneLab6.setVisible(false);
+        paneLab5.setVisible(false);
     }
 
     @FXML
-    public void menuLab5Click() {
+    private void menuLab5Click() {
         selectPane(paneLab5);
     }
 
     @FXML
-    public void menuLab6Click() {
+    private void menuLab6Click() {
         selectPane(paneLab6);
     }
 
     @FXML
-    protected void buttonCreateFigureOnClick() {
+    private void buttonCreateFigureOnClick() {
         int s = inputCheck(textFieldSizeOfFigureLab5.getText());
         if (s != -1) {
             textAreaOutputFigureLab5.setText(Lab5Service.figure(s));
+        }
+    }
+
+    @FXML
+    private void buttonLab6OnClick() {
+        double x = inputCheck2(textFieldXLab6.getText());
+        int n = inputCheck3(textFieldNLab6.getText());
+        double e = inputCheck2(textFieldELab6.getText());
+        if (x != -1 && n != -1 && e != -1) {
+            textAreaOutputFigureLab6.setText(Lab6Service.result(x, n, e));
         }
     }
 
@@ -91,8 +99,8 @@ public class VSULabsController implements Initializable {
 
         try {
             s = Integer.parseInt(str);
-            if (s < 2) {
-                textAreaOutputFigureLab5.setText("Введите число большее или равное 2!");
+            if (s < 2 || s%2 != 0) {
+                textAreaOutputFigureLab5.setText("Введите четное число большее или равное 2!");
                 s = -1;
             }
         } catch (NumberFormatException ex) {
@@ -103,25 +111,39 @@ public class VSULabsController implements Initializable {
         return s;
     }
 
+    private double inputCheck2(String str) {
+        double s = -1;
+
+        try {
+            s = Double.parseDouble(str);
+        } catch (NumberFormatException ex) {
+            textAreaOutputFigureLab6.setText("s и/или e не числа!");
+            ex.printStackTrace();
+        }
+
+        return s;
+    }
+
+    private int inputCheck3(String str) {
+        int s = -1;
+
+        try {
+            s = Integer.parseInt(str);
+            if (s < 2) {
+                textAreaOutputFigureLab6.setText("Введите n большее или равное 2!");
+                s = -1;
+            }
+        } catch (NumberFormatException ex) {
+            textAreaOutputFigureLab6.setText("Введите n, как целое число!");
+            ex.printStackTrace();
+        }
+
+        return s;
+    }
+
     private void selectPane(Pane pane) {
         this.selectedPane.setVisible(false);
         pane.setVisible(true);
         selectedPane = pane;
-    }
-
-    public void buttonCreate4OnClick() {
-
-    }
-
-    public void buttonCreate3OnClick() {
-
-    }
-
-    public void buttonCreate2OnClick() {
-
-    }
-
-    public void buttonCreate1OnClick() {
-
     }
 }

@@ -5,60 +5,88 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #227964; -fx-text-fill: white;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vsu.labs.VSULabsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="450.0" prefWidth="600.0"
+            style="-fx-background-color: #227964; -fx-text-fill: white;" stylesheets="@application.css"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vsu.labs.VSULabsController">
     <center>
-        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="294.0" prefWidth="600.0" BorderPane.alignment="BOTTOM_CENTER">
-            <Pane fx:id="paneLab5" layoutX="-1.0" layoutY="-103.0" prefHeight="398.0" prefWidth="600.0">
-                <Label fx:id="labelTypeLab5" alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="14.0" prefHeight="63.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Введите размер фигуры в целых числах больше 2" textAlignment="CENTER" wrapText="true">
+        <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="294.0" prefWidth="600.0"
+                    BorderPane.alignment="BOTTOM_CENTER">
+            <Pane fx:id="paneLab5" layoutX="-1.0" layoutY="-103.0" prefHeight="398.0" prefWidth="600.0" visible="false">
+                <Label fx:id="labelTypeLab5" alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="14.0"
+                       prefHeight="63.0" prefWidth="320.0" style="-fx-text-fill: white;"
+                       text="Введите размер фигуры в целых числах больше 2" textAlignment="CENTER" wrapText="true">
                     <font>
-                        <Font name="System Bold" size="17.0" />
+                        <Font name="System Bold" size="17.0"/>
                     </font>
                 </Label>
-                <Button id="buttonCreateFigure" fx:id="buttonCreateFigureLab5" layoutX="325.0" layoutY="95.0" mnemonicParsing="false" onAction="#buttonCreateFigureOnClick" prefHeight="25.0" prefWidth="115.0" style="-fx-text-fill: white;" styleClass="btn-common" text="Нарисовать" />
-                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="162.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Размер фигуры" />
-                <TextField id="textFieldSizeOfFigure" fx:id="textFieldSizeOfFigureLab5" alignment="CENTER" layoutX="267.0" layoutY="95.0" prefHeight="25.0" prefWidth="37.0" promptText="___" text="2" />
-                <TextArea id="textAreaOutputFigure" fx:id="textAreaOutputFigureLab5" editable="false" layoutX="16.0" layoutY="138.0" prefHeight="246.0" prefWidth="568.0" />
+                <Button id="buttonCreateFigure" fx:id="buttonCreateFigureLab5" layoutX="325.0" layoutY="95.0"
+                        mnemonicParsing="false" onAction="#buttonCreateFigureOnClick" prefHeight="25.0"
+                        prefWidth="115.0" style="-fx-text-fill: white;" styleClass="btn-common" text="Нарисовать"/>
+                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="162.0" layoutY="112.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="Размер фигуры"/>
+                <TextField id="textFieldSizeOfFigure" fx:id="textFieldSizeOfFigureLab5" alignment="CENTER"
+                           layoutX="267.0" layoutY="95.0" prefHeight="25.0" prefWidth="37.0" promptText="___" text="2"/>
+                <TextArea id="textAreaOutputFigure" fx:id="textAreaOutputFigureLab5" editable="false" layoutX="16.0"
+                          layoutY="138.0" prefHeight="246.0" prefWidth="568.0"/>
             </Pane>
-            <Pane fx:id="paneLab6" layoutX="-1.0" layoutY="-104.0" prefHeight="399.0" prefWidth="600.0" visible="false">
-                <Label fx:id="labelTypeLab6" alignment="CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="27.0" prefHeight="30.0" prefWidth="136.0" style="-fx-text-fill: white;" text="Циклы, ряды." textAlignment="CENTER" wrapText="true">
+            <Pane fx:id="paneLab6" layoutX="-1.0" layoutY="-104.0" prefHeight="399.0" prefWidth="600.0">
+                <Label fx:id="labelTypeLab6" alignment="CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="25.0"
+                       prefHeight="30.0" prefWidth="136.0" style="-fx-text-fill: white;" text="Циклы, ряды."
+                       textAlignment="CENTER" wrapText="true">
                     <font>
-                        <Font name="System Bold" size="17.0" />
+                        <Font name="System Bold" size="17.0"/>
                     </font>
                 </Label>
-                <Button id="buttonCreateFigure" fx:id="buttonCreate1Lab6" layoutX="100.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonCreate1OnClick" prefHeight="25.0" prefWidth="85.0" style="-fx-text-fill: white;" styleClass="btn-common" text="Сумма n" />
-                <Button id="buttonCreateFigure" fx:id="buttonCreate2Lab6" layoutX="205.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonCreate2OnClick" prefHeight="25.0" prefWidth="85.0" style="-fx-text-fill: white;" styleClass="btn-common" text="Больше e" />
-                <Button id="buttonCreateFigure" fx:id="buttonCreate3Lab6" layoutX="310.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonCreate3OnClick" prefHeight="25.0" prefWidth="85.0" style="-fx-text-fill: white;" styleClass="btn-common" text="Больше e/10" />
-                <Button id="buttonCreateFigure" fx:id="buttonCreate4Lab6" layoutX="415.0" layoutY="120.0" mnemonicParsing="false" onAction="#buttonCreate4OnClick" prefHeight="25.0" prefWidth="85.0" style="-fx-text-fill: white;" styleClass="btn-common" text="Math" />
-                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="165.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x =" />
-                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="255.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="n =" />
-                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="345.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e =" />
-                <TextField id="textFieldSizeOfFigure" fx:id="textField1Lab6" alignment="CENTER" layoutX="195.0" layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="___" text="2" />
-                <TextField id="textFieldSizeOfFigure" fx:id="textField2Lab6" alignment="CENTER" layoutX="285.0" layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="___" text="2" />
-                <TextField id="textFieldSizeOfFigure" fx:id="textField3Lab6" alignment="CENTER" layoutX="375.0" layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="___" text="2" />
-                <TextArea id="textAreaOutputFigure" fx:id="textAreaOutputFigureLab6" editable="false" layoutX="16.0" layoutY="160.0" prefHeight="225.0" prefWidth="568.0" />
+                <Button id="buttonCreateFigure" fx:id="buttonLab6" layoutX="258.0" layoutY="115.0"
+                        mnemonicParsing="false" onAction="#buttonLab6OnClick" prefHeight="25.0" prefWidth="85.0"
+                        style="-fx-text-fill: white;" styleClass="btn-common" text="Вычислить"/>
+                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="165.0" layoutY="89.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="x ="/>
+                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="255.0" layoutY="89.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="n ="/>
+                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="345.0" layoutY="89.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" text="e ="/>
+                <TextField id="textFieldSizeOfFigure" fx:id="textFieldXLab6" alignment="CENTER" layoutX="195.0"
+                           layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="___" text="2"/>
+                <TextField id="textFieldSizeOfFigure" fx:id="textFieldNLab6" alignment="CENTER" layoutX="285.0"
+                           layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="___" text="8"/>
+                <TextField id="textFieldSizeOfFigure" fx:id="textFieldELab6" alignment="CENTER" layoutX="375.0"
+                           layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="___" text="0.01"/>
+                <TextArea id="textAreaOutputFigure" fx:id="textAreaOutputFigureLab6" editable="false" layoutX="16.0"
+                          layoutY="160.0" prefHeight="225.0" prefWidth="568.0"/>
             </Pane>
         </AnchorPane>
     </center>
     <top>
-        <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #202020;" BorderPane.alignment="CENTER">
-            <MenuBar layoutY="25.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="260.0" style="-fx-background-color: #202020; -fx-text-fill: white">
+        <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #202020;"
+                    BorderPane.alignment="CENTER">
+            <MenuBar layoutY="25.0" maxWidth="-Infinity" prefHeight="26.0" prefWidth="260.0"
+                     style="-fx-background-color: #202020; -fx-text-fill: white">
                 <Menu fx:id="menuLab5" mnemonicParsing="false" style="-fx-text-fill: white;" text="5 лаба">
-                    <MenuItem fx:id="menuItemLab5" mnemonicParsing="false" onAction="#menuLab5Click" style="-fx-text-fill: white;" text="лаба" />
+                    <MenuItem fx:id="menuItemLab5" mnemonicParsing="false" onAction="#menuLab5Click"
+                              style="-fx-text-fill: white;" text="лаба"/>
                 </Menu>
-                <Menu fx:id="menuLab6" mnemonicParsing="false" onAction="#menuLab6Click" style="-fx-text-fill: white;" text="6 лаба">
-                    <MenuItem fx:id="menuItemLab6" mnemonicParsing="false" onAction="#menuLab6Click" style="-fx-text-fill: white;" text="лаба" />
+                <Menu fx:id="menuLab6" mnemonicParsing="false" onAction="#menuLab6Click" style="-fx-text-fill: white;"
+                      text="6 лаба">
+                    <MenuItem fx:id="menuItemLab6" mnemonicParsing="false" onAction="#menuLab6Click"
+                              style="-fx-text-fill: white;" text="лаба"/>
                 </Menu>
             </MenuBar>
             <AnchorPane layoutX="526.0" layoutY="8.0" prefHeight="35.0" prefWidth="70.0">
-                <HBox alignment="TOP_RIGHT" layoutX="-27.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="93.0">
-                    <Button mnemonicParsing="false" onMouseClicked="#min" prefHeight="26.0" prefWidth="31.0" style="-fx-text-fill: white;" styleClass="btn-min" text="--">
+                <HBox alignment="TOP_RIGHT" layoutX="-27.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0"
+                      prefWidth="93.0">
+                    <Button mnemonicParsing="false" onMouseClicked="#min" prefHeight="26.0" prefWidth="31.0"
+                            style="-fx-text-fill: white;" styleClass="btn-min" text="--">
                         <HBox.margin>
-                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                         </HBox.margin>
                     </Button>
-                    <Button mnemonicParsing="false" onMouseClicked="#close" style="-fx-text-fill: white;" styleClass="btn" text="X">
+                    <Button mnemonicParsing="false" onMouseClicked="#close" style="-fx-text-fill: white;"
+                            styleClass="btn" text="X">
                         <HBox.margin>
-                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                         </HBox.margin>
                     </Button>
                 </HBox>
