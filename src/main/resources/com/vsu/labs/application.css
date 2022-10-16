@@ -1,0 +1,61 @@
+.menu .label
+{
+    -fx-text-fill: white;
+}
+
+.menu .label, .menu-item .label {
+    -fx-text-fill: #eee;
+}
+.menu:hover, .menu:focused, .menu:pressed, .menu:showing {
+    -fx-background-color: rgb(89, 88, 88);
+    -fx-cursor: hand;
+}
+
+.menu-item:hover, .menu-item:focused {
+    -fx-background-color: rgb(89, 88, 88);
+    -fx-cursor: hand;
+}
+.context-menu {
+    -fx-background-color: rgba(0, 0, 0);
+}
+
+.btn {
+    -fx-background-color: #202020;
+}
+
+.btn-min {
+    -fx-background-color: #202020;
+}
+
+.btn-common {
+    -fx-background-color: #202020;
+}
+
+.btn-common:hover {
+    -fx-border-color: white;
+    -fx-border-width: 0 0 2 0;
+    -fx-cursor: hand;
+    -fx-background-color: rgba(48, 48, 48);
+}
+
+.btn:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #F75590;
+}
+
+.btn-min:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(64, 64, 64);
+}
+
+.text-area {
+    -fx-control-inner-background:#2c4423;
+    -fx-font-family: Consolas;
+    -fx-highlight-text-fill: #2c4423;
+    -fx-text-fill: white;
+    -fx-highlight-fill: #2c4423;
+}
+
+.text-area:focused {
+    -fx-highlight-fill: #2c4423;
+}

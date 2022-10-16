@@ -1,8 +1,7 @@
-module com.example.lab5fx {
+module com.vsu {
     requires javafx.controls;
     requires javafx.fxml;
 
-
-    opens com.example.lab5fx to javafx.fxml;
-    exports com.example.lab5fx;
+    exports com.vsu.labs;
+    opens com.vsu.labs to javafx.fxml;
 }
