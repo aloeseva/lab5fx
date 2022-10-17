@@ -19,6 +19,7 @@
 
 .my-list-cell {
     -fx-text-fill: white;
+    -fx-cursor: hand;
     -fx-background-color: #202020;
 }
 
@@ -28,7 +29,6 @@
 
 .my-list-cell:hover .my-list-cell:focused {
     -fx-text-fill: white;
-    /* No alternate highlighting */
     -fx-background-color: #202020;
 }
 
