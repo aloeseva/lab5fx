@@ -50,12 +50,8 @@
 
 .text-area {
     -fx-control-inner-background:#227964;
-    -fx-font-family: Consolas;
-    -fx-highlight-text-fill: #227964;
-    -fx-text-fill: black;
-    -fx-highlight-fill: #227964;
-}
-
-.text-area:focused {
-    -fx-highlight-fill: #227964;
+    -fx-font-size: 15px;
+    -fx-highlight-text-fill: white;
+    -fx-text-fill: white;
+    -fx-highlight-fill: #202020;
 }
