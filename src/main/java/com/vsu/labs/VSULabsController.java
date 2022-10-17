@@ -3,6 +3,7 @@ package com.vsu.labs;
 import com.vsu.labs.lab5.Lab5Service;
 import com.vsu.labs.lab6.Lab6Service;
 import com.vsu.labs.lab7.Lab7Service;
+import com.vsu.labs.lab8.Lab8Service;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -39,13 +40,23 @@ public class VSULabsController implements Initializable {
     public Pane paneLab7;
     public MenuItem menuItemLab7;
     public Button buttonCleanLab7;
+    public Pane paneLab8;
+    public Label labelTypeLab8;
+    public TextArea textAreaInputLab8;
+    public TextArea textAreaOutputLab8;
+    public Button buttonSearchSolutionLab8;
+    public Button buttonTestLab8;
+    public Button buttonCleanLab8;
+    public MenuItem menuItemLab8;
+    public ComboBox<String> testNumberLab8;
     private Pane selectedPane;
     private double x, y;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        selectedPane = paneLab7;
+        selectedPane = paneLab8;
         selectedPane.setVisible(true);
+        paneLab7.setVisible(false);
         paneLab6.setVisible(false);
         paneLab5.setVisible(false);
     }
@@ -63,7 +74,11 @@ public class VSULabsController implements Initializable {
     @FXML
     public void menuLab7Click() {
         selectPane(paneLab7);
+    }
 
+    @FXML
+    public void menuLab8Click() {
+        selectPane(paneLab8);
     }
 
     @FXML
@@ -117,14 +132,11 @@ public class VSULabsController implements Initializable {
         String[] tokens = s.split("}\n");
         StringBuilder strResult = new StringBuilder();
         int l = tokens.length;
-        for (int i = 0; i < l - 1; i++) {
+        for (int i = 0; i < l; i++) {
             int[] mas = Lab7Service.parsToMassive(tokens[i].split(i + 1 + " = \\{")[1]);
             String solution = Lab7Service.solution(mas);
             strResult.append(i + 1).append(" = ").append(solution).append("; ");
         }
-        int[] mas = Lab7Service.parsToMassive(tokens[l - 1].split(10 + " = \\{")[1]);
-        String solution = Lab7Service.solution(mas);
-        strResult.append(l).append(" = ").append(solution).append(";");
 
         textAreaOutputLab7.setText(strResult.toString());
     }
@@ -133,6 +145,32 @@ public class VSULabsController implements Initializable {
     public void buttonCleanLab7OnClick() {
         textAreaInputLab7.setText("");
         textAreaOutputLab7.setText("");
+    }
+
+    @FXML
+    public void buttonSearchSolutionLab8OnClick() {
+
+    }
+
+    @FXML
+    public void buttonTestLab8OnClick() {
+        int testNumber = Integer.parseInt(testNumberLab8.getSelectionModel().getSelectedItem());
+        String str = "";
+        switch (testNumber) {
+            case 1 -> str = Lab8Service.getTest(1);
+            case 2 -> str = Lab8Service.getTest(2);
+            case 3 -> str = Lab8Service.getTest(3);
+            case 4 -> str = Lab8Service.getTest(4);
+            case 5 -> str = Lab8Service.getTest(5);
+        }
+
+        textAreaInputLab8.setText(str);
+    }
+
+    @FXML
+    public void buttonCleanLab8OnClick() {
+        textAreaInputLab8.setText("");
+        textAreaOutputLab8.setText("");
     }
 
     @FXML
