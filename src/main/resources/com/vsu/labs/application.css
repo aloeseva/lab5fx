@@ -1,11 +1,37 @@
-.menu .label
-{
+.menu .label {
     -fx-text-fill: white;
 }
 
 .menu .label, .menu-item .label {
     -fx-text-fill: #eee;
 }
+
+.combo-box .cell{
+    -fx-text-fill: white;
+    -fx-background-color: #202020;
+}
+
+.combo-box .cell:hover{
+    -fx-text-fill: white;
+    -fx-background-color: rgb(89, 88, 88);
+    -fx-cursor: hand;
+}
+
+.my-list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #202020;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #202020;
+}
+
+.my-list-cell:hover .my-list-cell:focused {
+    -fx-text-fill: white;
+    /* No alternate highlighting */
+    -fx-background-color: #202020;
+}
+
 .menu:hover, .menu:focused, .menu:pressed, .menu:showing {
     -fx-background-color: rgb(89, 88, 88);
     -fx-cursor: hand;
@@ -15,6 +41,7 @@
     -fx-background-color: rgb(89, 88, 88);
     -fx-cursor: hand;
 }
+
 .context-menu {
     -fx-background-color: rgba(0, 0, 0);
 }
@@ -49,7 +76,7 @@
 }
 
 .text-area {
-    -fx-control-inner-background:#227964;
+    -fx-control-inner-background: #227964;
     -fx-font-size: 15px;
     -fx-highlight-text-fill: white;
     -fx-text-fill: white;
