@@ -86,6 +86,7 @@ public class VSULabsController implements Initializable {
         int s = inputCheck(textFieldSizeOfFigureLab5.getText());
         if (s != -1) {
             textAreaOutputFigureLab5.setText(Lab5Service.figure(s));
+            textAreaOutputFigureLab5.setStyle("-fx-text-fill: white; -fx-font-weight: normal;");
         }
     }
 
@@ -95,6 +96,7 @@ public class VSULabsController implements Initializable {
         int n = inputCheck3(textFieldNLab6.getText());
         double e = inputCheck2(textFieldELab6.getText());
         if (x != -1 && n != -1 && e != -1) {
+            textAreaOutputLab6.setStyle("-fx-text-fill: white; -fx-font-weight: normal;");
             textAreaOutputLab6.setText(Lab6Service.result(x, n, e));
         }
     }
@@ -105,10 +107,16 @@ public class VSULabsController implements Initializable {
         if (!str.isEmpty()) {
             try {
                 int[] mas = Lab7Service.parsToMassive(str);
-                textAreaOutputLab7.setText(Lab7Service.solution(mas));
+                if (mas.length < 2) {
+                    textAreaOutputLab7.setText("Введите массив целых чисел количеством элементов больше 1!");
+                    textAreaOutputLab7.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
+                } else {
+                    textAreaOutputLab7.setText(Lab7Service.solution(mas));
+                    textAreaOutputLab7.setStyle("-fx-text-fill: white; -fx-font-weight: normal;");
+                }
             } catch (NumberFormatException ex) {
                 textAreaOutputLab7.setText("Введите массив целых чисел через один пробел!");
-//                ex.printStackTrace();
+                textAreaOutputLab7.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
             }
         }
     }
@@ -139,6 +147,7 @@ public class VSULabsController implements Initializable {
         }
 
         textAreaOutputLab7.setText(strResult.toString());
+        textAreaOutputLab7.setStyle("-fx-text-fill: white; -fx-font-weight: normal;");
     }
 
     @FXML
@@ -205,10 +214,12 @@ public class VSULabsController implements Initializable {
             s = Integer.parseInt(str);
             if (s < 2 || s % 2 != 0) {
                 textAreaOutputFigureLab5.setText("Введите четное число большее или равное 2!");
+                textAreaOutputFigureLab5.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
                 s = -1;
             }
         } catch (NumberFormatException ex) {
             textAreaOutputFigureLab5.setText("Введите целое число!");
+            textAreaOutputFigureLab5.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
             ex.printStackTrace();
         }
 
@@ -222,6 +233,7 @@ public class VSULabsController implements Initializable {
             s = Double.parseDouble(str);
         } catch (NumberFormatException ex) {
             textAreaOutputLab6.setText("s и/или e не числа!");
+            textAreaOutputLab6.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
             ex.printStackTrace();
         }
 
@@ -235,10 +247,12 @@ public class VSULabsController implements Initializable {
             s = Integer.parseInt(str);
             if (s < 2) {
                 textAreaOutputLab6.setText("Введите n большее или равное 2!");
+                textAreaOutputLab6.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
                 s = -1;
             }
         } catch (NumberFormatException ex) {
             textAreaOutputLab6.setText("Введите n, как целое число!");
+            textAreaOutputLab6.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
             ex.printStackTrace();
         }
 
