@@ -124,16 +124,16 @@ public class VSULabsController implements Initializable {
     @FXML
     public void buttonTestLab7OnClick() {
         String str = """
-                1 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                2 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                3 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                4 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                5 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                6 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                7 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                8 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                9 = {2 3 4 5 13 1 2 3 4 5 5 1}
-                10 = {2 3 4 5 13 1 2 3 4 5 5 1}
+                1 = {asdasda}
+                2 = {0 0 0 0 0 0}
+                3 = {1}
+                4 = {5 1.1 2 1}
+                5 = {5 asda 2 1}
+                6 = {12 2 2 2 12 2}
+                7 = {2 2 2 12}
+                8 = {-2 -12 -12 -12 -2 -12}
+                9 = {1 5 -1 -12 -13 3}
+                10 = {12 2 2 2 12 3}
                 """;
         textAreaInputLab7.setText(str);
         String s = textAreaInputLab7.getText();
@@ -141,13 +141,30 @@ public class VSULabsController implements Initializable {
         StringBuilder strResult = new StringBuilder();
         int l = tokens.length;
         for (int i = 0; i < l; i++) {
-            int[] mas = Lab7Service.parsToMassive(tokens[i].split(i + 1 + " = \\{")[1]);
-            String solution = Lab7Service.solution(mas);
-            strResult.append(i + 1).append(" = ").append(solution).append("; ");
+            String solution = testCheck(tokens[i].split(i + 1 + " = \\{")[1]);
+            strResult.append(i + 1).append(" = ").append(solution).append(";\n");
         }
 
         textAreaOutputLab7.setText(strResult.toString());
         textAreaOutputLab7.setStyle("-fx-text-fill: white; -fx-font-weight: normal;");
+    }
+
+    private static String testCheck(String str) {
+        if (!str.isEmpty()) {
+            try {
+                int[] mas = Lab7Service.parsToMassive(str);
+                if (mas.length < 2) {
+                    str = "Введите массив целых чисел количеством элементов больше 1!";
+                } else {
+                    str = Lab7Service.solution(mas);
+                }
+            } catch (NumberFormatException ex) {
+                str = "Введите массив целых чисел через один пробел!";
+            }
+        } else {
+            str = "Введите массив целых чисел через один пробел!";
+        }
+        return str;
     }
 
     @FXML

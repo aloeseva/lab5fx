@@ -8,7 +8,7 @@ public class Lab7Service {
         String str = "";
         StringBuilder strBuilder = new StringBuilder(str);
 
-        int max = 0, min = 1;
+        int max = 0, min = mas.length - 1;
         for (int i = 0; i < mas.length; ++i)
         {
             if (mas[max] < mas[i])
@@ -30,8 +30,8 @@ public class Lab7Service {
             {
                 s = s + mas[i];
             }
+            strBuilder.append(s);
         }
-        strBuilder.append(s);
         return strBuilder.toString();
     }
 

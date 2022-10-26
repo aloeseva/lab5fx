@@ -36,20 +36,20 @@
                 <TextField id="textFieldSizeOfFigure" fx:id="textFieldELab6" alignment="CENTER" layoutX="375.0" layoutY="74.0" prefHeight="25.0" prefWidth="40.0" promptText="___" text="0.01" />
                 <TextArea id="textAreaOutputFigure" fx:id="textAreaOutputLab6" editable="false" layoutX="16.0" layoutY="160.0" prefHeight="225.0" prefWidth="568.0" />
             </Pane>
-            <Pane fx:id="paneLab7" layoutX="-1.0" layoutY="-103.0" prefHeight="398.0" prefWidth="600.0" visible="false">
+            <Pane fx:id="paneLab7" layoutX="-1.0" layoutY="-103.0" prefHeight="398.0" prefWidth="600.0">
                 <Label fx:id="labelTypeLab7" alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="15.0" prefHeight="63.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Введите массив целых чисел через пробел" textAlignment="CENTER" wrapText="true">
                     <font>
                         <Font name="System Bold" size="17.0" />
                     </font>
                 </Label>
-                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="16.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма элементов" />
-                <TextArea id="textAreaInputLab7" fx:id="textAreaInputLab7" layoutX="14.0" layoutY="134.0" prefHeight="177.0" prefWidth="570.0" />
-                <TextArea id="textAreaOutputLab7" fx:id="textAreaOutputLab7" editable="false" layoutX="16.0" layoutY="344.0" prefHeight="40.0" prefWidth="568.0" />
+                <Text id="labelNumberOfTasks" fill="WHITE" layoutX="16.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма элементов" />
+                <TextArea id="textAreaInputLab7" fx:id="textAreaInputLab7" layoutX="14.0" layoutY="134.0" prefHeight="104.0" prefWidth="570.0" />
+                <TextArea id="textAreaOutputLab7" fx:id="textAreaOutputLab7" editable="false" layoutX="16.0" layoutY="283.0" prefHeight="108.0" prefWidth="568.0" />
                 <Button id="buttonSearchSolution" fx:id="buttonSearchSolution" layoutX="166.0" layoutY="96.0" mnemonicParsing="false" onAction="#buttonSearchSolutionOnClick" prefHeight="25.0" prefWidth="73.0" style="-fx-text-fill: white;" styleClass="btn-common" text="Посчитать" />
                 <Button id="buttonTestLab7" fx:id="buttonTestLab7" layoutX="266.0" layoutY="96.0" mnemonicParsing="false" onAction="#buttonTestLab7OnClick" prefHeight="25.0" prefWidth="73.0" style="-fx-text-fill: black; -fx-background-color: #33b69e;" styleClass="btn-common" text="Тест" />
                 <Button id="buttonCleanLab7" fx:id="buttonCleanLab7" layoutX="366.0" layoutY="96.0" mnemonicParsing="false" onAction="#buttonCleanLab7OnClick" prefHeight="25.0" prefWidth="73.0" style="-fx-text-fill: black; -fx-background-color: #ffffff;" styleClass="btn-common" text="Очистить" />
             </Pane>
-            <Pane fx:id="paneLab8" layoutY="-103.0" prefHeight="398.0" prefWidth="600.0">
+            <Pane fx:id="paneLab8" layoutY="-103.0" prefHeight="398.0" prefWidth="600.0" visible="false">
                 <Label fx:id="labelTypeLab8" alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="15.0" prefHeight="63.0" prefWidth="320.0" style="-fx-text-fill: white;" text="Многомерные (двумерные) массивы" textAlignment="CENTER" wrapText="true">
                     <font>
                         <Font name="System Bold" size="17.0" />
